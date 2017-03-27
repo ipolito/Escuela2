@@ -1,0 +1,50 @@
+﻿@{
+
+    ViewBag.Title = "Catalago de alumnos";
+    List<Escuela2.Models.Alumno> Datos = ViewBag.Datos;
+}
+
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Catalogo de alumnos</div>
+        <div class="panel-body"></div>
+        <table class="table table-condensed col-xs-12 text-center">
+            <thead>
+                <tr>
+                    <td class="col-xs-2 ">Matricula</td>
+                    <td class="col-xs-4">Apellido</td>
+                    <td class="col-xs-3">Nombre</td>
+                    <td class="col-xs-2">Grupo</td>
+
+
+                </tr>
+            </thead>
+
+            @foreach (Escuela2.Models.Alumno item in Datos)
+            {
+                <tr>
+                    <td>@item.pkAlumno</td>
+                    <td>@item.sApellido</td>
+                    <td>@item.sNombre</td>
+                    <td>@item.sGrupo</td>
+                    <td class="col-xs-1">
+                        <a href="~/Home/VerDetalle/@item.pkAlumno">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </a>
+                    </td>
+
+
+
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>
+
+
+
+
+
+
